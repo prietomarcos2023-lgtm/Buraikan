@@ -1,4 +1,4 @@
-/* Mareblu install / offline enhancement; independent of journal storage. */
+/* Buraikan install / offline enhancement; independent of journal storage. */
 (function(){
   let deferredPrompt=null;
   function showHint(){
@@ -6,12 +6,12 @@
     if(standalone)return;
     const isApple=/iPad|iPhone|iPod/.test(navigator.userAgent);
     const mobile=/Android|iPad|iPhone|iPod/i.test(navigator.userAgent);
-    const message=isApple ? 'En Safari: Compartir → Añadir a pantalla de inicio.' : mobile ? 'En el menú del navegador: Instalar aplicación o Añadir a pantalla de inicio.' : 'En Chrome o Edge: menú del navegador → Instalar Mareblu Trading Journal (o icono instalar junto a la dirección).';
+    const message=isApple ? 'En Safari: Compartir → Añadir a pantalla de inicio.' : mobile ? 'En el menú del navegador: Instalar aplicación o Añadir a pantalla de inicio.' : 'En Chrome o Edge: menú del navegador → Instalar Buraikan Journal (o icono instalar junto a la dirección).';
     alert(message+'\n\nImportante: tus datos se guardan localmente en este navegador. Hacé un backup antes de cambiar de dispositivo o navegador.');
   }
   window.addEventListener('beforeinstallprompt',function(event){
     event.preventDefault();deferredPrompt=event;
-    const btn=document.getElementById('mbInstallBtn');if(btn)btn.title='Instalar Mareblu como aplicación';
+    const btn=document.getElementById('mbInstallBtn');if(btn)btn.title='Instalar Buraikan como aplicación';
   });
   window.addEventListener('appinstalled',function(){deferredPrompt=null;const btn=document.getElementById('mbInstallBtn');if(btn)btn.hidden=true;});
   document.addEventListener('DOMContentLoaded',function(){
@@ -25,6 +25,6 @@
     }
   });
   if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')){
-    window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(err){console.warn('Mareblu: modo offline no disponible',err);});});
+    window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(err){console.warn('Buraikan: modo offline no disponible',err);});});
   }
 })();
