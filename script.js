@@ -15,6 +15,18 @@ function setViewMode(mode){
   renderCalendar();
 }
 
+// Reglas de disciplina: deben existir antes del primer render del HUD.
+const MB_CHECKS=[
+ ['bias','Respeté el sesgo HTF'],
+ ['range','Operé un rango H3/H4 a favor'],
+ ['confirmation','Esperé confirmación para entrar'],
+ ['risk','Respeté el riesgo y el stop planificado'],
+ ['fomo','Evité FOMO y entradas impulsivas'],
+ ['limit','Respeté mi límite diario de trades'],
+ ['plan','Seguí mi plan sin improvisar'],
+ ['management','Gestioné la posición según el plan']
+];
+
 // ═══ Buraikan: Hábitos Clase S — guardado local, por día y mes ═══
 const HABITS_STORE_KEY='mtj_habits_class_s_v1';
 const CLASS_S_HABITS=[
@@ -1234,16 +1246,6 @@ window.addEventListener('resize',drawEquityChart);
 
 
 // ═══ MAREBLU v5: disciplina, revisión guiada y exportaciones ═══
-const MB_CHECKS=[
- ['bias','Respeté el sesgo HTF'],
- ['range','Operé un rango H3/H4 a favor'],
- ['confirmation','Esperé confirmación para entrar'],
- ['risk','Respeté el riesgo y el stop planificado'],
- ['fomo','Evité FOMO y entradas impulsivas'],
- ['limit','Respeté mi límite diario de trades'],
- ['plan','Seguí mi plan sin improvisar'],
- ['management','Gestioné la posición según el plan']
-];
 const MB_ERRORS=['','Entrada anticipada','Contra el sesgo HTF','Sin confirmación','FOMO','Riesgo excesivo','Moví el stop','Cerré antes de tiempo','Sobreoperación','Otro'];
 function mbOptions(list,sel){return list.map(v=>'<option value="'+esc(v)+'"'+(sel===v?' selected':'')+'>'+esc(v||'Sin especificar')+'</option>').join('');}
 function buildDisciplineForm(t,i){
