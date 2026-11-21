@@ -1,0 +1,15 @@
+BURIKAN SHADOW TRADER SYSTEM V3 — ASCENSOS CON HITOS
+
+Rango E: inicial. EXP da niveles, pero NO asciende rangos automáticamente.
+D: 500 EXP + retiro individual USD 300 + 10 trades evaluados + 80% disciplina + 2 sábados de backtesting.
+C: 1300 EXP + retiro individual USD 1000 + 25 trades evaluados + 85% disciplina + 5 sábados.
+B: 2800 EXP + retiro individual USD 5000 + 50 trades evaluados + 88% disciplina + 10 sábados.
+A: 5000 EXP + retiro individual USD 10000 + 100 trades evaluados + 90% disciplina + 18 sábados.
+S: 8500 EXP + retiro individual USD 25000 + 150 trades evaluados + 92% disciplina + 26 sábados.
+SHADOW MONARCH: 13000 EXP + retiro individual USD 50000 + 250 trades evaluados + 95% disciplina + 52 sábados.
+
+Los hitos son acumulativos: hay que cumplir también todos los requisitos de rangos previos.
+Los retiros se registran manualmente en el botón VER HITOS Y RETIROS; son pagos reales ya cobrados, NO P&L ni beneficios flotantes. No es verificación bancaria.
+Un trade solo cuenta como evaluado si tiene al menos 6 de las 8 reglas de disciplina contestadas. El porcentaje es la suma de respuestas afirmativas entre todas las respuestas evaluadas. Incluye todas las cuentas de este mismo navegador, no cuenta resultados no introducidos al journal.
+Los retiros se guardan en localStorage mtj_rank_withdrawals_v1 y están incluidos en el Backup JSON. La nueva PWA usa cache v4.
+Antes de actualizar GitHub exportá tu backup JSON. Subí el contenido extraído del ZIP y verificá en Settings > Pages.
